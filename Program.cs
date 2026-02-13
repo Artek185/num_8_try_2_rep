@@ -29,7 +29,20 @@ namespace num_8_try_2
                 BackColor = Color.LightGray;
 
                 Button exitButton = CreateButton(new Size(60, 30), new Point(700, 500), "Выход");
-                exitButton.Click += (sender, e) => Application.Exit();
+                exitButton.Click += (sender, e) =>
+                {
+                    var result = MessageBox.Show(
+                        "Вы точно хотите выйти из приложения?",
+                        "Подтверждение выхода",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question,
+                        MessageBoxDefaultButton.Button2);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Exit();
+                    }
+                };
 
                 Label titleLabel = CreateLabel(new Size(150, 24), new Point(10, 0), "Светофор");
                 titleLabel.Font = new Font(titleLabel.Font.FontFamily, 12f, FontStyle.Bold);
