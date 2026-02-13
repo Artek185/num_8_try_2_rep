@@ -49,6 +49,8 @@ namespace num_8_try_2
                 rbBlue.CheckedChanged += (s, e) =>
                 {
                     if (rbBlue.Checked) BackColor = Color.Green;
+                    var newvar = new New_Class1();
+                    newvar.Name = "";
                 };
 
               
